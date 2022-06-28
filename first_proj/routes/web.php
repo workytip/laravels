@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\AdminController;
+use  App\Http\Controllers\authAdminController;
+
 
 
 /*
@@ -24,3 +27,15 @@ use App\Http\Controllers\BlogController;
 
 Route::get('Blog/Create',[BlogController :: class , 'create']);
 Route::post('Blog/Store',[BlogController :: class , 'store']);
+Route::get('Blog/index',[BlogController :: class , 'index']);
+
+########################################################################
+Route::get('admin/create',[AdminController::class,'create']);
+Route::post('admin/store',[AdminController::class,'store']);
+Route::get('admin/index',[AdminController :: class , 'index']);
+########################################################################
+Route :: get('Login',[authAdminController :: class , 'login']);
+Route :: post('DOLogin',[authAdminController :: class , 'doLogin']);
+Route :: get('Logout',[authAdminController :: class , 'Logout']);
+
+
